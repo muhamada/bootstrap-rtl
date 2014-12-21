@@ -2,29 +2,18 @@
 // --------------------------------------------------
 
 
-// Media image alignment
-// -------------------------
+.media-right,
+.media > .pull-right {
+  padding-right: 10px;
+}
 
-.media {
-  > .pull-left {
-    margin-right: 10px;
-    &.flip {
-      margin-right: 0;
-      margin-left: 10px;
-    }
-  }
-  > .pull-right {
-      margin-left: 10px;
-    &.flip {
-      margin-left: 0;
-      margin-right: 10px;
-    }
-  }
+.media-left,
+.media > .pull-left {
+  padding-left: 10px;
 }
 
 // Media list variation
-// -------------------------
-
+//
 // Undo default ul/ol styles
 .media-list {
   padding-right: 0;
