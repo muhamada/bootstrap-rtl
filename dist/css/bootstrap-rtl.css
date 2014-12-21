@@ -1,7 +1,7 @@
 /*******************************************************************************
  *              bootstrap-rtl (Version 3.2.0-rc7)
  *      Author: Morteza Ansarinia <ansarinia@me.com> (http://github.com/morteza)
- *  Created on: November 11,2014
+ *  Created on: December 21,2014
  *     Project: bootstrap-rtl
  *   Copyright: No license.
  *******************************************************************************/
@@ -841,6 +841,9 @@ blockquote.pull-left {
     margin-left: 0;
   }
 }
+caption {
+  text-align: right;
+}
 th {
   text-align: right;
 }
@@ -1226,19 +1229,13 @@ th {
 .progress-bar {
   float: right;
 }
-.media > .pull-left {
-  margin-right: 10px;
-}
-.media > .pull-left.flip {
-  margin-right: 0;
-  margin-left: 10px;
-}
+.media-right,
 .media > .pull-right {
-  margin-left: 10px;
+  padding-right: 10px;
 }
-.media > .pull-right.flip {
-  margin-left: 0;
-  margin-right: 10px;
+.media-left,
+.media > .pull-left {
+  padding-left: 10px;
 }
 .media-list {
   padding-right: 0;
@@ -1378,6 +1375,43 @@ th {
 .popover.bottom > .arrow:after {
   margin-right: -10px;
   margin-left: auto;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-inner > .item.next,
+  .carousel-inner > .item.active.right {
+    transform: translate3d(-100%, 0, 0);
+    right: 0;
+  }
+  .carousel-inner > .item.prev,
+  .carousel-inner > .item.active.left {
+    transform: translate3d(100%, 0, 0);
+    right: 0;
+  }
+  .carousel-inner > .item.next.left,
+  .carousel-inner > .item.prev.right,
+  .carousel-inner > .item.active {
+    transform: translate3d(0, 0, 0);
+    right: 0;
+  }
+}
+.carousel-inner > .active {
+  right: 0;
+}
+.carousel-inner > .next {
+  right: -100%;
+}
+.carousel-inner > .prev {
+  right: 100%;
+}
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right {
+  right: 0;
+}
+.carousel-inner > .active.left {
+  right: 100%;
+}
+.carousel-inner > .active.right {
+  right: -100%;
 }
 .carousel-control {
   right: 0;
