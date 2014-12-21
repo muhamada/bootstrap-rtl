@@ -3,6 +3,56 @@
 // --------------------------------------------------
 
 
+// Wrapper for the slide container and indicators
+.carousel-inner {
+
+  > .item {
+
+    // WebKit CSS3 transforms for supported devices
+    @media all and (transform-3d), (-webkit-transform-3d) {
+      &.next,
+      &.active.right {
+        transform: translate3d(-100%, 0, 0);
+        right: 0;
+      }
+      &.prev,
+      &.active.left {
+        transform: translate3d(100%, 0, 0);
+        right: 0;
+      }
+      &.next.left,
+      &.prev.right,
+      &.active {
+        transform: translate3d(0, 0, 0);
+        right: 0;
+      }
+    }
+  }
+
+  > .active {
+    right: 0;
+  }
+
+  > .next {
+    right: -100%;
+  }
+  > .prev {
+    right: 100%;
+  }
+  > .next.left,
+  > .prev.right {
+    right: 0;
+  }
+
+  > .active.left {
+    right: 100%;
+  }
+  > .active.right {
+    right: -100%;
+  }
+
+}
+
 // Left/right controls for nav
 // ---------------------------
 
