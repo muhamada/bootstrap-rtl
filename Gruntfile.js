@@ -14,13 +14,23 @@ module.exports = function(grunt) {
 					dest : '.'
 				} ]
 			}
+		},
+		connect: {
+			server:{
+				options: {
+					keepalive: true
+				}
+			}
+
 		}
+
 	});
 
 	// These plugins provide necessary tasks.
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	// Default task.
-	grunt.registerTask('default', ['copy']);
+	grunt.registerTask('default', [ 'copy', 'connect' ]);
 
 };
