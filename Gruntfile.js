@@ -85,5 +85,5 @@ grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-string-replace');
 
 // Default Task
-grunt.registerTask('default', ['less', 'usebanner']);
+grunt.registerTask('default', ['less', 'usebanner', 'copy', 'string-replace']);
 };
