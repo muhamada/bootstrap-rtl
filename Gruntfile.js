@@ -59,7 +59,22 @@ module.exports = function(grunt) {
     	}
     },
     
-    
+    'string-replace': {
+    	main: {
+    		files: [{
+    			expand: true,
+    			cwd: 'docs/',
+    			src: ['components/index.html', 'css/index.html', 'javascript/index.html', 'examples/**/index.html', 'index.html'],
+    			dest: '.'    			
+    		}],
+    		options: {
+    			replacements: [{
+    				pattern: '</head>',
+    				replacement: "<!-- Bootstrap RTL Theme -->\n<link rel=\"stylesheet\" href=\"/dist/css/bootstrap-rtl.css\">\n\n</head>"
+    			}]
+    		}
+    	}
+    }
   });
 
 
