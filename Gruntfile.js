@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     		files: [{
     			expand: true,
     			cwd: 'bootstrap-docs/',
-    			src: ['css/**', 'components/**', 'examples/**', 'javascript/**', 'assets/**', 'dist/**', 'index.html'],
+    			src: ['css/**', 'components/**', 'examples/**', 'javascript/**', 'assets/**', 'dist/**'],
     			dest: 'docs'
     		}]
     	}
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
     		files: [{
     			expand: true,
     			cwd: 'docs/',
-    			src: ['components/index.html', 'css/index.html', 'javascript/index.html', 'examples/**/index.html', 'index.html'],
+    			src: ['components/index.html', 'css/index.html', 'javascript/index.html', 'examples/**/index.html'],
     			dest: 'docs/'    			
     		}],
     		options: {
