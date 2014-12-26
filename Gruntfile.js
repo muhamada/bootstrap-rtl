@@ -46,7 +46,20 @@ module.exports = function(grunt) {
         files: {
           src: ['dist/css/<%= pkg.name %>.css', 'dist/css/<%= pkg.name %>.min.css']
         }        
-    }
+    },
+    
+    copy: {
+    	main:{
+    		files: [{
+    			expand: true,
+    			cwd: 'bootstrap-docs/',
+    			src: ['css/**', 'components/**', 'examples/**', 'javascript/**', 'assets/**', 'dist/**', 'index.html'],
+    			dest: 'docs'
+    		}]
+    	}
+    },
+    
+    
   });
 
 
