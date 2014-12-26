@@ -65,7 +65,7 @@ module.exports = function(grunt) {
     			expand: true,
     			cwd: 'docs/',
     			src: ['components/index.html', 'css/index.html', 'javascript/index.html', 'examples/**/index.html', 'index.html'],
-    			dest: '.'    			
+    			dest: 'docs/'    			
     		}],
     		options: {
     			replacements: [{
