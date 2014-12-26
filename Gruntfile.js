@@ -81,6 +81,8 @@ module.exports = function(grunt) {
 // Load uglify plugin
 grunt.loadNpmTasks('grunt-contrib-less');
 grunt.loadNpmTasks('grunt-banner');
+grunt.loadNpmTasks('grunt-contrib-copy');
+grunt.loadNpmTasks('grunt-string-replace');
 
 // Default Task
 grunt.registerTask('default', ['less', 'usebanner']);
