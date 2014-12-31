@@ -84,6 +84,14 @@ grunt.loadNpmTasks('grunt-banner');
 grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-string-replace');
 
+// Custom Task
+grunt.registerTask('processFile', 'Process each file to generate clean output', function(filePath){
+	require("cheerio");
+
+	var $ = cheerio();
+	
+});
+
 // Default Task
 grunt.registerTask('default', ['less', 'usebanner', 'copy', 'string-replace']);
 };
