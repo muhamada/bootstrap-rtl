@@ -86,9 +86,34 @@ grunt.loadNpmTasks('grunt-string-replace');
 
 // Custom Task
 grunt.registerTask('processFile', 'Process each file to generate clean output', function(filePath){
-	require("cheerio");
-
-	var $ = cheerio();
+	try {
+		 var fileContents =grunt.file.read(filePath);
+		 
+		 if (fileContents) {
+			 var cheerio = require("cheerio");
+			 var $ = cheerio.load(fileContents);
+			 
+			 //Insert bootstrap-rtl.css
+			 $('head').append('\n<!-- bootsrap-rtl CSS -->\n<link rel="stylesheet" href="../dist/css/bootstrap-rtl.css">\n');
+			 
+			 //Remove carbonads-container
+			 $('#carbonads-container').remove();
+			 
+			 //Remove unnecessary navbar list items
+			 $('header#top a:contains("Getting started")').parent().remove(); //Getting Started
+			 $('header#top a:contains("Customize")').parent().remove(); //Customize
+			 $('header#top a:contains("Expo")').parent().parent().remove(); //Blog and Expo (Remove the ul tag)
+			 
+			 //Remove footer
+			 $('footer').remove();
+			 //Write contents to file
+			 grunt.file.write(filePath, $.html());
+		 }
+	}catch(err){
+		grunt.log.error('Error while processing "' + filePath + '": ' + err);
+		return false;
+	}
+		
 	
 });
 
